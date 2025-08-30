@@ -1,0 +1,34 @@
+{
+  "name": "imports-microservices-system",
+  "version": "1.0.0",
+  "description": "Sistema de importaciones con arquitectura de microservicios",
+  "main": "gateway/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node gateway/server.js",
+    "start:products": "node services/products/server.js",
+    "start:imports": "node services/imports/server.js",
+    "start:users": "node services/users/server.js",
+    "start:all": "concurrently \"npm run start:products\" \"npm run start:imports\" \"npm run start:users\" \"npm start\"",
+    "dev": "npm run start:all",
+    "init-db": "node scripts/init-database.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "joi": "^17.12.2",
+    "axios": "^1.7.2",
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "keywords": ["microservices", "imports", "spring-boot-equivalent", "rest-api"],
+  "author": "Sistema de Importaciones",
+  "license": "MIT"
+}
